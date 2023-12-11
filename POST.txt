@@ -1,0 +1,44 @@
+POST
+http://localhost:8080/api/user/create
+{
+    "username": "hunglt20",
+    "password": "123456a",
+    "confirmPassword": "123456a"
+}
+
+GET
+http://localhost:8080/api/user/hunglt20
+
+POST
+http://localhost:8080/api/cart/addToCart
+
+{
+    "username": "hunglt20",
+    "itemId": 1,
+    "quantity": 1
+}
+
+POST
+http://localhost:8080/api/cart/addToCart
+
+{
+    "username": "hunglt20",
+    "itemId": 2,
+    "quantity": 3
+}
+
+POST
+http://localhost:8080/api/cart/removeFromCart
+
+{
+    "username": "hunglt20",
+    "itemId": 2,
+    "quantity": 2
+}
+
+POST
+http://localhost:8080/api/order/submit/hunglt20
+
+GET
+http://localhost:8080/api/order/history/hunglt20
+

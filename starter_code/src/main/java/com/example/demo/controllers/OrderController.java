@@ -2,6 +2,8 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,26 +19,38 @@ import com.example.demo.model.persistence.repositories.CartRepository;
 import com.example.demo.model.persistence.repositories.OrderRepository;
 import com.example.demo.model.persistence.repositories.UserRepository;
 
+import static com.example.demo.security.SecurityConstants.*;
+
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
-	
+
+	private Logger logger = LoggerFactory.getLogger(OrderController.class);
 	
 	@Autowired
 	private UserRepository userRepository;
 	
 	@Autowired
 	private OrderRepository orderRepository;
-	
-	
+
+	public OrderController() {
+	}
+	@Autowired
+	public OrderController(UserRepository userRepository, OrderRepository orderRepository) {
+		this.userRepository = userRepository;
+		this.orderRepository = orderRepository;
+	}
+
 	@PostMapping("/submit/{username}")
 	public ResponseEntity<UserOrder> submit(@PathVariable String username) {
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
+			logger.error("Method: {}, Status: {} , User: {}", "submit", FAIL, "Not found");
 			return ResponseEntity.notFound().build();
 		}
 		UserOrder order = UserOrder.createFromCart(user.getCart());
 		orderRepository.save(order);
+		logger.info("Method: {}, Status: {} , User: {}", "submit", SUCCESS, username);
 		return ResponseEntity.ok(order);
 	}
 	
@@ -44,8 +58,10 @@ public class OrderController {
 	public ResponseEntity<List<UserOrder>> getOrdersForUser(@PathVariable String username) {
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
+			logger.error("Method: {}, Status: {} , User: {}", "getOrdersForUser", FAIL, "Not found");
 			return ResponseEntity.notFound().build();
 		}
+		logger.info("Method: {}, Status: {} , User: {}", "getOrdersForUser", SUCCESS, username);
 		return ResponseEntity.ok(orderRepository.findByUser(user));
 	}
 }
