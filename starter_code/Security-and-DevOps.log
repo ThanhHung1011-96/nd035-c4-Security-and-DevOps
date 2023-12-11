@@ -33,3 +33,7 @@
 2023-12-11 21:45:45.928  INFO 7872 --- [http-nio-8080-exec-5] c.e.demo.controllers.OrderController     : Method: submit, Status: SUCCESS , User: hunglt20
 2023-12-11 21:45:52.553  WARN 7872 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
 2023-12-11 21:46:19.217  INFO 7872 --- [http-nio-8080-exec-7] c.e.demo.controllers.OrderController     : Method: getOrdersForUser, Status: SUCCESS , User: hunglt20
+2023-12-11 22:01:12.528  INFO 7872 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-12-11 22:01:12.530  INFO 7872 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-11 22:01:12.531  INFO 7872 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-11 22:01:12.532  INFO 7872 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
