@@ -20,3 +20,16 @@
 2023-12-11 21:25:36.291  INFO 7872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2023-12-11 21:25:36.427  INFO 7872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2023-12-11 21:25:36.438  INFO 7872 --- [main] com.example.demo.SareetaApplication      : Started SareetaApplication in 4.054 seconds (JVM running for 6.61)
+2023-12-11 21:38:13.997  INFO 7872 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-11 21:38:13.997  INFO 7872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-11 21:38:14.001  INFO 7872 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-12-11 21:38:14.216  INFO 7872 --- [http-nio-8080-exec-1] c.e.demo.controllers.UserController      : Method: createUser, Status: SUCCESS , Username: hunglt20
+2023-12-11 21:39:15.333  INFO 7872 --- [http-nio-8080-exec-3] c.e.demo.controllers.UserController      : Method: findByUserName, Status: SUCCESS , username: hunglt20
+2023-12-11 21:42:49.585  INFO 7872 --- [http-nio-8080-exec-8] c.e.demo.controllers.CartController      : Method: addTocart, Status: SUCCESS , ItemId: 1
+2023-12-11 21:42:58.854  INFO 7872 --- [http-nio-8080-exec-9] c.e.demo.controllers.CartController      : Method: addTocart, Status: SUCCESS , ItemId: 2
+2023-12-11 21:44:12.429  INFO 7872 --- [http-nio-8080-exec-1] c.e.demo.controllers.ItemController      : Method: getItemById, Status: SUCCESS , ItemById: 1
+2023-12-11 21:44:52.050  INFO 7872 --- [http-nio-8080-exec-4] c.e.demo.controllers.ItemController      : Method: getItemsByName, Status: SUCCESS , ItemsByName: Round Widget
+2023-12-11 21:45:18.588  INFO 7872 --- [http-nio-8080-exec-3] c.e.demo.controllers.CartController      : Method: removeFromcart, Status: SUCCESS , ItemId: 2
+2023-12-11 21:45:45.928  INFO 7872 --- [http-nio-8080-exec-5] c.e.demo.controllers.OrderController     : Method: submit, Status: SUCCESS , User: hunglt20
+2023-12-11 21:45:52.553  WARN 7872 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2023-12-11 21:46:19.217  INFO 7872 --- [http-nio-8080-exec-7] c.e.demo.controllers.OrderController     : Method: getOrdersForUser, Status: SUCCESS , User: hunglt20
